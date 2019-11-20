@@ -11,13 +11,18 @@ public class GridLayout extends AppCompatActivity {
 
     Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btndot, btnpercent, btnmultiply, btnadd, btnsub, btnequals;
     TextView result;
+    float ValueOne , ValueTwo ;
+
+    boolean boolSum = false, boolSub = false, boolMul =false, boolper =false;
+
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grid_layout);
-
+//binding
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
         btn3 = findViewById(R.id.btn3);
@@ -105,31 +110,45 @@ public class GridLayout extends AppCompatActivity {
                 result.setText(result.getText() + "0");
             }
         });
+
+
         btnadd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 result.setText(result.getText() + "+");
+                ValueOne  = Float.parseFloat(result.getText().toString());
+                boolSum = true;
+                result.setText(null);
             }
         });
 
         btnsub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                result.setText(result.getText() + "-");
+                result.setText(result.getText() + "+");
+                ValueOne  = Float.parseFloat(result.getText().toString());
+                boolSum = true;
+                result.setText(null);
             }
         });
 
         btnmultiply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                result.setText(result.getText() +"*");
+                result.setText(result.getText() + "+");
+                ValueOne  = Float.parseFloat(result.getText().toString());
+                boolSum = true;
+                result.setText(null);
             }
         });
 
         btnpercent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                result.setText(result.getText() +"%");
+                result.setText(result.getText() + "+");
+                ValueOne  = Float.parseFloat(result.getText().toString());
+                boolSum = true;
+                result.setText(null);
             }
         });
 
